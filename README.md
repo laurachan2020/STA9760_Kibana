@@ -1,5 +1,7 @@
 # STA9760 Project 3  Visualizing and Analysis on Kibana
 
+![scrnshot](https://raw.githubusercontent.com/laurachan2020/STA9760_Kibana/master/dashboard.PNG)
+
 ## How to Run
 
 Start:
@@ -26,5 +28,5 @@ sh test_curl.sh > output.txt
 Shutting off:
 docker-compose down
 
-https://raw.githubusercontent.com/laurachan2020/STA9760_Kibana/master/dashboard.PNG
+
 
