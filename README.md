@@ -26,6 +26,5 @@ sh test_curl.sh > output.txt
 Shutting off:
 docker-compose down
 
-# ●	Which violation was most popular? Second most popular? Etc
 
 
