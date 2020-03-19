@@ -35,7 +35,8 @@ The above command will load violation parking data into Elasticsearch.
 sh test_curl.sh > output.txt
 
 Shutting off:
-
-```
 docker-compose down
-```
+
+# ●	Which violation was most popular? Second most popular? Etc
+
+
