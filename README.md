@@ -26,5 +26,5 @@ sh test_curl.sh > output.txt
 Shutting off:
 docker-compose down
 
-
+https://raw.githubusercontent.com/laurachan2020/STA9760_Kibana/master/dashboard.PNG
 
