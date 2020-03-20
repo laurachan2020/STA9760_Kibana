@@ -23,7 +23,6 @@ docker-compose run pyth python tickets.py --page_size=12000 --num_pages=400
 
 The above command will load violation parking data into Elasticsearch.
 
-
 Shutting off:
 
 docker-compose down
