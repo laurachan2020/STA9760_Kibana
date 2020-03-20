@@ -15,7 +15,7 @@ docker-compose down
 
 docker images
 
-docker rmi bigdata2_pyth -f
+docker rmi bigdata3_pyth -f
 
 docker-compose up -d
 
