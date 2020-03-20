@@ -11,15 +11,34 @@ def create_and_update_index(index_name, doc_type):
     except Exception:
         pass
 
-    # es.indices.put_mapping(
-    # index=index_name,
-    # doc_type=doc_type,
-    # body={
-    #     doc_type: {
-    #         "properties": {"location": {"type": "geo_point"}, }
-    #     }
-    # }
-
+    es.indices.put_mapping(
+        index=index_name,
+        doc_type=doc_type,
+        body={
+                doc_type: {
+                    "properties": {
+                        "amount_due": {
+                        "type": "float"
+                        },
+                        "fine_amount": {
+                        "type": "float"
+                        },
+                        "interest_amount": {
+                        "type": "float"
+                        },
+                        "payment_amount": {
+                        "type": "float"
+                        },
+                        "penalty_amount": {
+                        "type": "float"
+                        },
+                        "reduction_amount": {
+                        "type": "float"
+                        },
+                    }
+                }
+            }
+        )
     return es
 
 def insert_into_es(tickets, es):
@@ -28,30 +47,6 @@ def insert_into_es(tickets, es):
             ticket['issue_date'],
             '%m/%d/%Y',
         )
-        try:
-            ticket['amount_due'] = float(ticket['amount_due'])
-        except KeyError:
-            pass
-        try:
-            ticket['fine_amount'] = float(ticket['fine_amount'])
-        except KeyError:
-            pass
-        try:
-            ticket['interest_amount'] = float(ticket['interest_amount'])
-        except KeyError:
-            pass
-        try:
-            ticket['payment_amount'] = float(ticket['payment_amount'])
-        except KeyError:
-            pass
-        try:
-            ticket['penalty_amount'] = float(ticket['penalty_amount'])
-        except KeyError:
-            pass
-        try:
-            ticket['reduction_amount'] = float(ticket['reduction_amount'])
-        except KeyError:
-            pass
         res = es.index(index='violation-parking-index', doc_type='vehicle', body=ticket, )
         print(res['result'])
 
