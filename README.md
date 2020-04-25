@@ -5,6 +5,9 @@
 ## How to Run
 
 Start:
+
+export APP_KEY={MY_TOKEN}
+
 docker-compose up -d
 
 cd C:\project3\bigdata3
